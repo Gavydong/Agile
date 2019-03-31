@@ -55,6 +55,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\bullet.cs" />
      <Compile Include="Assets\Scripts\bullet1.cs" />
+     <Compile Include="Assets\Scripts\DontDestroy.cs" />
      <Compile Include="Assets\Scripts\explode.cs" />
      <Compile Include="Assets\Scripts\Login Scene\LoginButtonHandler.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
