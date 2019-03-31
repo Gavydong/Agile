@@ -1,13 +1,14 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Player.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\testenemy.cs">
     <Files>
-      <File FileName="Assets\Scripts\Player.cs" Line="68" Column="21" />
+      <File FileName="Assets\Scripts\Player.cs" Line="12" Column="15" />
       <File FileName="Assets\Scripts\explode.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\testenemy.cs" Line="55" Column="29" />
-      <File FileName="Assets\Scripts\PlayerObject.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\bullet.cs" Line="14" Column="18" />
+      <File FileName="Assets\Scripts\testenemy.cs" Line="60" Column="3" />
+      <File FileName="Assets\Scripts\PlayerObject.cs" Line="27" Column="3" />
+      <File FileName="Assets\Scripts\bullet.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\bullet1.cs" Line="24" Column="18" />
+      <File FileName="Assets\Scripts\healthbar1.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

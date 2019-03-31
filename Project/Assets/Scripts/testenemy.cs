@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class testenemy : MonoBehaviour {
 	public GameObject explosion;
-	private float health =5;
+	public static float health =1;
 	public float moveSpeed=3;
 	// Use this for initialization
 	public GameObject bulletPrefab;
@@ -70,8 +70,8 @@ public class testenemy : MonoBehaviour {
 	}
 	private void death()
 	{
-		health--;
-		if (health == 0) {
+		health = health - 0.1f;
+		if (health <= 0) {
 			//explosion effect
 			Instantiate (explosion, transform.position, transform.rotation);
 			//death
