@@ -9,7 +9,7 @@ public class Player : MonoBehaviour {
 	public GameObject bulletPrefab;
 	private float firetime;
 	public GameObject explosion;
-	public float health =5;
+	public static float health =1;
 
 	void Start () {
 		
@@ -64,8 +64,8 @@ public class Player : MonoBehaviour {
 
 	private void death()
 	{
-		health--;
-		if (health == 0) {
+		health = health - 0.1f;
+		if (health <= 0) {
 			//explosion effect
 			Instantiate (explosion, transform.position, transform.rotation);
 			//death
