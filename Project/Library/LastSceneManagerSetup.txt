@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/scenes/restart scene.unity
+- path: Assets/scenes/Game Mode Page.unity
   isLoaded: 1
   isActive: 1
