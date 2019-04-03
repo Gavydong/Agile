@@ -1,19 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
-
+using UnityEngine.UI;
+using System;
+using System.Threading;
 
 
 public class testenemy : MonoBehaviour {
 	public GameObject explosion;
-	private float health =5;
-	public float moveSpeed=3;
+    public static float health = 1;
+    public float moveSpeed=3;
 	// Use this for initialization
 	public GameObject bulletPrefab;
 	private float firetime;
 	// Use this for initialization
 	void Start () {
-		
+        health = 1;
 	}
 	
 	// Update is called once per frame
@@ -68,14 +71,22 @@ public class testenemy : MonoBehaviour {
 		transform.Translate (Vector3.up * v * moveSpeed * Time.fixedDeltaTime, Space.World);
 
 	}
-	private void death()
+    IEnumerator timesleep()
+    {
+
+        yield return new WaitForSecondsRealtime(2000);
+    }
+    private void death()
 	{
-		health--;
-		if (health == 0) {
-			//explosion effect
-			Instantiate (explosion, transform.position, transform.rotation);
-			//death
-			Destroy (gameObject);
-		}
+        health = health - 0.1f;
+        if (health <= 0)
+        {
+            //explosion effect
+            Instantiate(explosion, transform.position, transform.rotation);
+            //death
+            Destroy(gameObject);
+            timesleep();
+            SceneManager.LoadScene(5);
+        }
 	}
 }

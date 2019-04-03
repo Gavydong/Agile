@@ -1,6 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
+using System.Threading;
+using UnityEngine.SceneManagement;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class Player : MonoBehaviour {
@@ -9,10 +13,10 @@ public class Player : MonoBehaviour {
 	public GameObject bulletPrefab;
 	private float firetime;
 	public GameObject explosion;
-	public float health =5;
+    public static float health = 1;
 
-	void Start () {
-		
+    void Start () {
+        health = 1;
 	}
 	
 	// Update is called once per frame
@@ -61,15 +65,22 @@ public class Player : MonoBehaviour {
 		transform.Translate (Vector3.up * v * moveSpeed * Time.fixedDeltaTime, Space.World);
 			
 	}
+    IEnumerator timesleep()
+    {
 
+        yield return new WaitForSecondsRealtime(2000);
+    }
 	private void death()
 	{
-		health--;
-		if (health == 0) {
-			//explosion effect
-			Instantiate (explosion, transform.position, transform.rotation);
-			//death
-			Destroy (gameObject);
-		}
+        health = health - 0.1f;
+        if (health <= 0)
+        {
+            //explosion effect
+            Instantiate(explosion, transform.position, transform.rotation);
+            //death
+            Destroy(gameObject);
+            StartCoroutine(timesleep());
+            SceneManager.LoadScene(6);
+        }
 	}
 }
